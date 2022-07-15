@@ -12,13 +12,15 @@ class MyTableView: UIView {
     // MARK: - Elemets
     
     private var controller: TableViewController?
-    private var model = Model.cellList()
     
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
+    private var models = ModelAPI.cellList()
+    let tableView = UITableView()
+    
+//    private lazy var tableView: UITableView = {
+//        let tableView = UITableView()
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//        return tableView
+//    }()
     
     // MARK: - Lifecucle
     
@@ -32,9 +34,9 @@ class MyTableView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupView()
         setupHierarchy()
         setupLayout()
+        setupView()
     }
     
     // MARK: - private function
@@ -46,6 +48,7 @@ class MyTableView: UIView {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "imageCell")
         tableView.rowHeight = 100
+        
     }
     
     private func setupHierarchy() {
@@ -60,29 +63,22 @@ class MyTableView: UIView {
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
-}
-
-func setupData(result: Int) {
-    print(result)
+    
+    func setupData(data: [Model]) {
+        models = data
+        tableView.reloadData()
+    }
 }
 
 extension MyTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let list = [Model]()
-        return list.count
+        return models.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath)
-        let text = model[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ModelTableViewCell
         
-        cell.textLabel?.text = text.textCell
-        cell.textLabel?.numberOfLines = 2
-        cell.detailTextLabel?.text = text.imageCell
-        
-        cell.imageView?.image = UIImage(named: text.title)
-        cell.imageView?.layer.cornerRadius = tableView.rowHeight / 2
-        cell.imageView?.clipsToBounds = true
+        cell.model = models[indexPath.row]
         
         return cell
     }

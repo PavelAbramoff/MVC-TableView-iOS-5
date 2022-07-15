@@ -9,7 +9,8 @@ import UIKit
 
 class TableViewController: UIViewController {
     
-    private let model = Model.cellList()
+    private let model = ModelAPI.cellList()
+    let tableView = UITableView()
     
     private var myTableView: MyTableView? {
         guard isViewLoaded else { return nil }
@@ -19,7 +20,13 @@ class TableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = MyTableView(controller: self)
+        setupMyView()
     }
+    
+    private func setupMyView() {
+        myTableView?.setupData(data: model)
+    }
+    
 }
 
 

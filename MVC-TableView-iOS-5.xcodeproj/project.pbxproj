@@ -17,6 +17,7 @@
 		1219AB862878609200CB9000 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1219AB852878609200CB9000 /* Model.swift */; };
 		1219AB8A28794D4C00CB9000 /* MaTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1219AB8928794D4C00CB9000 /* MaTableView.swift */; };
 		1219AB8F287AA2A300CB9000 /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1219AB8E287AA2A200CB9000 /* UITableViewController.swift */; };
+		12271317288096B200C99569 /* ModelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12271316288096B200C99569 /* ModelTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1219AB852878609200CB9000 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1219AB8928794D4C00CB9000 /* MaTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaTableView.swift; sourceTree = "<group>"; };
 		1219AB8E287AA2A200CB9000 /* UITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
+		12271316288096B200C99569 /* ModelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +82,9 @@
 		1219AB8B287964A700CB9000 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1219AB8928794D4C00CB9000 /* MaTableView.swift */,
 				1219AB7428785DE000CB9000 /* Main.storyboard */,
-				1219AB8E287AA2A200CB9000 /* UITableViewController.swift */,
+				1219AB8928794D4C00CB9000 /* MaTableView.swift */,
+				12271316288096B200C99569 /* ModelTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				1219AB7228785DE000CB9000 /* ViewController.swift */,
+				1219AB8E287AA2A200CB9000 /* UITableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				1219AB862878609200CB9000 /* Model.swift in Sources */,
 				1219AB8A28794D4C00CB9000 /* MaTableView.swift in Sources */,
 				1219AB7928785DE000CB9000 /* MVC_TableView_iOS_5.xcdatamodeld in Sources */,
+				12271317288096B200C99569 /* ModelTableViewCell.swift in Sources */,
 				1219AB7328785DE000CB9000 /* ViewController.swift in Sources */,
 				1219AB6F28785DE000CB9000 /* AppDelegate.swift in Sources */,
 				1219AB7128785DE000CB9000 /* SceneDelegate.swift in Sources */,

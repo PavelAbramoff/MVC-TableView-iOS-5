@@ -8,17 +8,13 @@
 import Foundation
 
 struct Model {
-    let imageCell: String // artist
-    let textCell: String // song
-    
-    var title: String {
-        "\(imageCell) - \(textCell)"
-    }
+    let imageCell: String?
+    let textCell: String?
 }
 
-extension Model {
+class ModelAPI {
     static func cellList() -> [Model] {
-        [
+       let model = [
             Model(imageCell: "Model", textCell: "Model"),
             Model(imageCell: "View", textCell: "View"),
             Model(imageCell: "Controller", textCell: "Управленеи программой"),
@@ -32,6 +28,7 @@ extension Model {
             Model(imageCell: "View", textCell: "Отоброжение вида"),
             Model(imageCell: "Controller", textCell: "Управленеи программой")
         ]
+        return model
     }
 }
 
